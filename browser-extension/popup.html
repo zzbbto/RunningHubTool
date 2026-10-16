@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body { width: 330px; margin: 0; font-family: -apple-system, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif; color: #24292f; }
+      .wrap { padding: 14px 16px; }
+      h3 { margin: 0 0 4px; font-size: 15px; }
+      .sub { color: #8a94a6; font-size: 12px; margin: 0 0 12px; }
+      .steps { font-size: 12px; color: #57606a; background: #f6f8fa; border-radius: 8px; padding: 8px 10px; margin-bottom: 10px; }
+      .steps b { color: #4f6ef7; }
+      button { width: 100%; padding: 8px 10px; border: none; border-radius: 8px; font-size: 13px; cursor: pointer; color: #fff; margin-top: 6px; }
+      button.primary { background: #4f6ef7; }
+      button.success { background: #1a7f37; }
+      button:disabled { background: #b8c0d8; cursor: not-allowed; }
+      .status { margin-top: 10px; padding: 8px 10px; border-radius: 8px; background: #f6f8fa; font-size: 12px; white-space: pre-wrap; max-height: 160px; overflow: auto; }
+      .status.error { background: #ffebe9; color: #cf222e; }
+      .status.ok { background: #dafbe1; color: #116329; }
+      .hint { color: #8a94a6; font-size: 11px; margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h3>📋 RunningHub 复制/粘贴参数</h3>
+      <div class="steps">
+        1. 在<b>来源应用</b>页面点 <b>① 复制本页参数</b><br/>
+        2. 到<b>发布/编辑</b>页面点 <b>② 粘贴到本页</b><br/>
+        3. 核对后手动点发布
+      </div>
+      <button id="goCn" class="primary">打开 runninghub.cn</button>
+      <button id="goAi" class="primary">打开 runninghub.ai</button>
+      <button id="showLast" class="success">查看上次复制的参数</button>
+      <div class="status" id="status" style="display: none"></div>
+      <div class="hint">点击后到页面右下角点 📋 按钮，执行复制/粘贴。</div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "RunningHub 复制/粘贴应用参数 + 双站同名覆盖迁移",
+  "version": "1.2.0",
+  "description": "在来源应用页面一键「复制」节点参数设置，到发布应用页面一键「粘贴」；并在 wallet-migrate 页面提供「同名覆盖迁移」——用源站数据覆盖目标站同名资产（保留目标 id）。支持 runninghub.cn 与 runninghub.ai。",
+  "permissions": ["storage", "scripting", "activeTab", "cookies"],
+  "host_permissions": [
+    "https://www.runninghub.cn/*",
+    "https://www.runninghub.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "RunningHub 复制/粘贴参数",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.runninghub.cn/*",
+        "https://www.runninghub.ai/*"
+      ],
+      "js": ["token.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.runninghub.cn/*",
+        "https://www.runninghub.ai/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.runninghub.cn/wallet-migrate*",
+        "https://www.runninghub.ai/wallet-migrate*"
+      ],
+      "js": ["migrate.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# 依赖与本地文件
+node_modules/
+package.json
+package-lock.json
+
+# 浏览器登录 profile（含账号信息，绝不能提交）
+.pw-profile/
+.pw-ext-test/
+
+# 测试/调试脚本
+scripts/
+
+# 版本控制与截图
+.svn/
+shot-migrate.png
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
